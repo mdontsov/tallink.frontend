@@ -1,0 +1,18 @@
+<div>
+  <div *ngIf="event">
+    <div>
+      <label>Conference name: </label> {{event.conferenceName}}
+    </div>
+    <div>
+      <label>Guest full name: </label> {{event.guestFullName}}
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-info btn-xs" (click)="removeGuest()">Remove guest</button>
+    <button type="button" class="btn btn-warning btn-xs" (click)="deleteConference()">Delete conference</button>
+    <button type="button" class="btn btn-danger btn-xs" (click)="deleteAll()">Delete event</button>
+  </div>
+
+  <hr />
+</div>

@@ -1,0 +1,15 @@
+<div style="padding: 20px;">
+  <h1 style="color: blue">{{title}}</h1>
+  <h3>{{description}}</h3>
+  <div class="btn-group">
+    <a routerLink="conferenceMenu" class="btn btn-primary active" role="button" routerLinkActive="active">Conferences</a>
+    <a routerLink="createConference" class="btn btn-primary active" role="button" routerLinkActive="active">Create
+      conference</a>
+    <a routerLink="createGuest" class="btn btn-primary active" role="button" routerLinkActive="active">Create guest</a>
+    <a routerLink="registerEvent" class="btn btn-primary active" role="button" routerLinkActive="active">Register to
+      event</a>
+    <a routerLink="findRoom" class="btn btn-primary active" role="button" routerLinkActive="active">Find conference
+      room</a>
+  </div>
+  <router-outlet></router-outlet>
+</div>

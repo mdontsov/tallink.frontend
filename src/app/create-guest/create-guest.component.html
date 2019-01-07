@@ -1,0 +1,25 @@
+<h3>Create new guest</h3>
+<hr />
+<div [hidden]="submitted" style="width: 300px">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="fullName">Full name</label>
+      <input type="text" class="form-control" id="fullName" required [(ngModel)]="guest.fullName" name="fullName">
+    </div>
+    <div class="form-group">
+      <label for="birthDate">Date of birth</label>
+      <input type="text" class="form-control" id="birthDate" required [(ngModel)]="guest.birthDate" name="birthDate"
+        placeholder="YYYY-MM-DD">
+    </div>
+    <button type="submit" class="btn btn-success">Create guest</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Guest successfully created!</h4>
+  <button class="btn btn-success" (click)="newGuest()">Add new</button>
+</div>
+<hr />
+<div>
+  <button class="btn btn-danger" (click)="deleteAllGuests()">Remove all guests</button>
+</div>

@@ -1,0 +1,13 @@
+<h1>Conferences</h1>
+<hr />
+<div *ngFor="let event of events | async" style="width: 300px">
+  <event-details [event]="event"></event-details>
+</div>
+
+<div *ngFor="let conference of conferences | async" style="width: 300px">
+  <conference-details [conference]="conference"></conference-details>
+</div>
+
+<div>
+  <button type="button" class="btn btn-danger btn-md" (click)="deleteConferences()">Delete all conferences</button>
+</div>

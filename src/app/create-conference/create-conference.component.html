@@ -1,0 +1,17 @@
+<h3>Create new conference</h3>
+<hr />
+<div [hidden]="submitted" style="width: 300px">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="conference.conferenceName" name="name">
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Conference successfully created!</h4>
+  <button class="btn btn-success" (click)="newConference()">Add new</button>
+</div>

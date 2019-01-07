@@ -1,0 +1,24 @@
+<h3>Select guest and conference for registration</h3>
+<hr />
+<div [hidden]="submitted" style="width: 300px">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group" *ngIf="guests">
+      <label for="name">Guest full name</label>
+      <mat-select [(ngModel)]="guestSelected" name="fullName">
+        <mat-option *ngFor="let guest of guests" [value]="guest.fullName">{{guest.fullName}}</mat-option>
+      </mat-select>
+    </div>
+    <div class="form-group" *ngIf="conferences">
+      <label for="name">Conference name</label>
+      <mat-select [(ngModel)]="conferenceSelected" name="conferenceName">
+        <mat-option *ngFor="let conference of conferences" [value]="conference.conferenceName">{{conference.conferenceName}}</mat-option>
+      </mat-select>
+    </div>
+    <button type="submit" class="btn btn-success">Register</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Event registration is successful!</h4>
+  <button class="btn btn-success" (click)="registerForEvent()">Add new registration</button>
+</div>

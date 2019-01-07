@@ -1,0 +1,23 @@
+<h3>Find available room for conference</h3>
+<hr />
+<div style="width: 300px">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group" *ngIf="conferences">
+            <label for="name">Conference name</label>
+            <mat-select [(ngModel)]="selected" name="conferenceName">
+                <mat-option *ngFor="let conference of conferences" [value]="conference.conferenceName">{{conference.conferenceName}}</mat-option>
+            </mat-select>
+        </div>
+        <button class="btn btn-success" role="button" (click)="findRoom()">Find</button>
+    </form>
+</div>
+<hr />
+<div>
+    <h4>Rooms</h4>
+    <hr />
+    <div [hidden]="!submitted">
+        <div *ngFor="let room of rooms" style="width: 300px">
+            <room-list [room]="room"></room-list>
+        </div>
+    </div>
+</div>

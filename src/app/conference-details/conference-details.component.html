@@ -1,0 +1,11 @@
+<div>
+  <div *ngIf="conference">
+    <div>
+      <label>Conference</label> {{conference.conferenceName}} <label>is active:</label> {{conference.active}}
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary btn-xs" *ngIf="conference.active" (click)="cancelConferenceStatus(false)">Cancel</button>
+  <button type="button" class="btn btn-success btn-xs" *ngIf="!conference.active" (click)="activateConferenceStatus(true)">Activate</button>
+  <hr />
+</div>
